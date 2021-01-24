@@ -1,6 +1,9 @@
+// @ts-check
+
 // Estoque de dados de deque
 // Fila de duas pontas (double-ended queue)
-class Deque{
+
+class Deque {
 
     #count = 0;
     #lowestCount = 0;
@@ -11,6 +14,9 @@ class Deque{
         this.#items = {};
     }
 
+    /**
+     * @param {any} element
+     */
     addFront(element){
         if(this.isEmpty()){
             this.addBack(element);
@@ -104,24 +110,24 @@ class Deque{
 
 }
 
-const deque = new Deque();
+// const deque = new Deque();
 
-console.log(deque.isEmpty())
+// console.log(deque.isEmpty())
 
-deque.addBack('John');
-deque.addBack('Jack');
+// deque.addBack('John');
+// deque.addBack('Jack');
 
-console.log(deque.toString());
-deque.addBack('Camila');
-console.log(deque.toString());
-console.log(deque.size());
-console.log(deque.isEmpty());
-deque.removeFront();
-console.log(deque.toString());
-deque.removeBack();
-console.log(deque.toString());
-deque.addBack('John');
-deque.addBack('Maria');
+// console.log(deque.toString());
+// deque.addBack('Camila');
+// console.log(deque.toString());
+// console.log(deque.size());
+// console.log(deque.isEmpty());
+// deque.removeFront();
+// console.log(deque.toString());
+// deque.removeBack();
+// console.log(deque.toString());
+// deque.addBack('John');
+// deque.addBack('Maria');
 
-console.log(deque.toString());
-console.log(deque.size())
+// console.log(deque.toString());
+// console.log(deque.size())

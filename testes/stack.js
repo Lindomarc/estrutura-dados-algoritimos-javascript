@@ -60,9 +60,9 @@ class Stack {
 }
 
 
-const stack = new Stack();
+// const stack = new Stack();
 
-stack.push(5)
-stack.push(8)
+// stack.push(5)
+// stack.push(8)
 
-console.log(stack.toString())
+// console.log(stack.toString())

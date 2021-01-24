@@ -23,7 +23,7 @@ class Queue {
      * remover primeiro item da fila,
      * devolver elemento removido
      */
-    dqueue(){
+    dequeue(){
         if (this.isEmpty()) {
             return undefined;
         }
@@ -80,20 +80,19 @@ class Queue {
 
 }
 
-const queue = new Queue();
-console.log(queue.isEmpty())
+// const queue = new Queue();
+// console.log(queue.isEmpty())
 
-queue.enqueue('John')
-queue.enqueue('Maria')
+// queue.enqueue('John')
+// queue.enqueue('Maria')
 
-console.log(queue.toString())
+// console.log(queue.toString())
 
-queue.enqueue('Camila')
+// queue.enqueue('Camila')
 
-console.log(queue.size())
+// console.log(queue.size())
 
-queue.dqueue();
-queue.dqueue();
-console.log(queue.size())
+// queue.dequeue();
+// queue.dequeue();
 
-console.log(queue.toString());
+// console.log(queue.toString());

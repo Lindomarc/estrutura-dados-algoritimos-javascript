@@ -1,10 +1,13 @@
 // @ts-check
 
 class Queue {
+    #items;
+    #count;
+    #lowestCount;
     constructor() {
-        this.count = 0;
-        this.lowestCount = 0;
-        this.items = {}
+        this.#count = 0;
+        this.#lowestCount = 0;
+        this.#items = {}
     }
 
     /**
@@ -12,8 +15,8 @@ class Queue {
      * @param {string} element
      */
     enqueue(element){
-        this.items[this.count] = element;
-        this.count++;
+        this.#items[this.#count] = element;
+        this.#count++;
     }
 
     /**
@@ -24,9 +27,9 @@ class Queue {
         if (this.isEmpty()) {
             return undefined;
         }
-        const result = this.items[this.lowestCount];
-        delete this.items[this.lowestCount];
-        this.lowestCount++;
+        const result = this.#items[this.#lowestCount];
+        delete this.#items[this.#lowestCount];
+        this.#lowestCount++;
 
         return result;
     }
@@ -39,7 +42,7 @@ class Queue {
             return undefined;
         }
 
-        return this.items[this.lowestCount];
+        return this.#items[this.#lowestCount];
     }
 
     /**
@@ -53,13 +56,13 @@ class Queue {
      * Mostrar tamanho da fila
      */
     size(){
-        return this.count - this.lowestCount;
+        return this.#count - this.#lowestCount;
     }
 
     clear(){
-        this.items = {}
-        this.count = 0;
-        this.lowestCount = 0;
+        this.#items = {}
+        this.#count = 0;
+        this.#lowestCount = 0;
     }
 
     toString(){
@@ -67,9 +70,9 @@ class Queue {
             return '';
         }
 
-        let objString = `${this.items[this.lowestCount]}`
-        for(let i = this.lowestCount + 1; i < this.count; i++){
-            objString = `${objString},${this.items[i]}`;
+        let objString = `${this.#items[this.#lowestCount]}`
+        for(let i = this.#lowestCount + 1; i < this.#count; i++){
+            objString = `${objString},${this.#items[i]}`;
         }
         return objString;
 
@@ -91,5 +94,6 @@ console.log(queue.size())
 
 queue.dqueue();
 queue.dqueue();
+console.log(queue.size())
 
 console.log(queue.toString());
